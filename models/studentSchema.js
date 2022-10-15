@@ -1,7 +1,8 @@
 const mongoose = require("mongoose")
 const schema = mongoose.schema
+const model = mongoose.model
 
-var StudentSchema = new schema({
+var studentSchema = new schema({
     name: String,
     email: String,
     gender: String,
@@ -14,3 +15,6 @@ var StudentSchema = new schema({
     versionkey: false
 }
 )
+
+var StudentModel = mongoose.model('student', studentSchema, 'student')
+module.exports = StudentModel
